@@ -1,11 +1,10 @@
-package org.eclipse.xtext.example.domainmodel.tests
+package org.eclipse.xtext.example.domainmodel.ui.tests
 
-import org.eclipse.xtext.example.domainmodel.DomainmodelUiInjectorProvider
 import org.eclipse.xtext.junit4.InjectWith
 import org.eclipse.xtext.junit4.XtextRunner
 import org.eclipse.xtext.xbase.junit.ui.AbstractContentAssistTest
-import org.junit.runner.RunWith
 import org.junit.Test
+import org.junit.runner.RunWith
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(DomainmodelUiInjectorProvider))

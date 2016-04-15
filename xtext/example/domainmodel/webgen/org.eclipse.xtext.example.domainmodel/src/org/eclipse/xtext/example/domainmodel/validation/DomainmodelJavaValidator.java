@@ -15,7 +15,7 @@ import org.eclipse.xtext.util.Strings;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.validation.ValidationMessageAcceptor;
 
-public class DomainmodelJavaValidator extends AbstractDomainmodelJavaValidator {
+public class DomainmodelJavaValidator extends AbstractDomainmodelValidator {
 
     @Check
     public void checkTypeNameStartsWithCapital(Entity entity) {

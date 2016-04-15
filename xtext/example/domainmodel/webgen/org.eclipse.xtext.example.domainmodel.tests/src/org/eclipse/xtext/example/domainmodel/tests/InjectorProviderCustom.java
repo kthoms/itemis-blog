@@ -1,6 +1,5 @@
 package org.eclipse.xtext.example.domainmodel.tests;
 
-import org.eclipse.xtext.example.domainmodel.DomainmodelInjectorProvider;
 import org.eclipse.xtext.example.domainmodel.DomainmodelRuntimeModule;
 import org.eclipse.xtext.example.domainmodel.DomainmodelStandaloneSetup;
 
