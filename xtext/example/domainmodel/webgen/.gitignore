@@ -1,0 +1,6 @@
+**/.DS_Store
+bin
+target
+src-gen
+xtend-gen
+plugin.xml_gen
