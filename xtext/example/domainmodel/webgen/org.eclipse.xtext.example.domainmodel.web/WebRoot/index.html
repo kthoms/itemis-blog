@@ -3,12 +3,14 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta http-equiv="Content-Language" content="en-us">
 	<title>Example Web Editor</title>
-	<link rel="stylesheet" type="text/css" href="xtext/2.9.1/xtext-ace.css"/>
+	<link rel="stylesheet" type="text/css" href="xtext/2.10.0/xtext-ace.css"/>
 	<link rel="stylesheet" type="text/css" href="style.css"/>
 	<script src="webjars/requirejs/2.1.20/require.min.js"></script>
 	<script type="text/javascript">
 		var baseUrl = window.location.pathname;
 		var fileIndex = baseUrl.indexOf("index.html");
+		var editor;
+		
 		if (fileIndex > 0)
 			baseUrl = baseUrl.slice(0, fileIndex);
 		require.config({
@@ -16,17 +18,23 @@
 			paths: {
 				"jquery": "webjars/jquery/2.1.4/jquery.min",
 				"ace/ext/language_tools": "webjars/ace/1.2.0/src/ext-language_tools",
-				"xtext/xtext-ace": "xtext/2.9.1/xtext-ace"
+				"xtext/xtext-ace": "xtext/2.10.0/xtext-ace"
 			}
 		});
 		require(["webjars/ace/1.2.0/src/ace"], function() {
 			require(["xtext/xtext-ace"], function(xtext) {
-				xtext.createEditor({
+				editor = xtext.createEditor({
 					baseUrl: baseUrl,
-					syntaxDefinition: "xtext-resources/generated/mode-dmodel"
+					syntaxDefinition: "xtext-resources/generated/mode-dmodel",
+					enableGeneratorService: true 
 				});
 			});
 		});
+		
+		function doGenerate () {
+			console.log("generate!");
+			editor.xtextServices.generate();
+		}
 	</script>
 </head>
 <body>
@@ -39,6 +47,7 @@
 		<div id="xtext-editor" data-editor-xtext-lang="dmodel"></div>
 	</div>
 </div>
+	<!--<a href="#" onclick="doGenerate">Generate!</a>-->
 
 </body>
 </html>
